@@ -1,0 +1,44 @@
+{
+    //manifest spec: http://developer.chrome.com/extensions/manifest.html
+    //required
+    "name": "Chrome Extension Template",
+    "version": "1.0",
+    "manifest_version": 2,
+
+	"content_scripts": [
+    {
+      "matches": ["http://www.facebook.com/*", "https://www.facebook.com/*"],
+      "js": ["js/main.js", "js/global.js"]
+    }],
+
+    //recommended
+    "description": "Chrome extension description written here.",
+    "icons": {
+        "19": "images/icon_19.png",
+        "38": "images/icon_38.png",
+        "128": "images/icon_128.png"
+    },
+
+    //required
+    "browser_action": {
+        "default_title": "browser_action: default_title",
+        "default_icon": {
+            "19": "images/icon_19.png",
+            "38": "images/icon_38.png"
+        },
+        "default_popup": "html/main.html"
+    },
+"permissions": [
+  "tabs",
+  "bookmarks",
+  "https://*.facebook.com/*",
+  "http://*.facebook.com/*",
+  "unlimitedStorage",
+  "alarms",
+  "browsingData",
+],
+
+    //additional
+    "options_page": "html/options.html",
+    "homepage_url": "http://yourdomainhere.com/"
+}

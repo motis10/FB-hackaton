@@ -1,0 +1,60 @@
+{
+    //manifest spec: http://developer.chrome.com/extensions/manifest.html
+    //required
+    "name": "SafeBook",
+    "version": "1.0",
+    "manifest_version": 2,
+
+	"content_scripts": [
+    {
+      "matches": ["https://safebook-2016.herokuapp.com/*" , "http://www.facebook.com/*", "https://www.facebook.com/*"],
+      "css": ["css/popup.css"],
+      "js": ["/js/global.js","/js/jquery-1.9.1.min.js", "/js/popup.js","/js/bootstrap-modal.js"]
+    }],
+
+    //recommended
+    "description": "Your Profanity Conscience",
+    "icons": {
+        "19": "images/facebook-icon--social-media-beakers-iconset--iconshock-30.png",
+        "38": "images/facebook-icon--social-media-beakers-iconset--iconshock-30.png",
+        "128": "images/facebook-icon--social-media-beakers-iconset--iconshock-30.png"
+    },
+
+    //required
+    "browser_action": {
+        "default_title": "browser_action: default_title",
+        "default_icon": {
+            "19": "images/facebook-icon--social-media-beakers-iconset--iconshock-30.png",
+            "38": "images/facebook-icon--social-media-beakers-iconset--iconshock-30.png"
+        },
+        "default_popup": "html/main.html"
+    },
+"permissions": [
+  "tabs",
+  "bookmarks",
+  "https://*.facebook.com/*",
+  "http://*.facebook.com/*",
+  "https://safebook-2016.herokuapp.com/*",
+  "unlimitedStorage",
+  "alarms",
+  "browsingData",
+  "clipboardRead",
+  "clipboardWrite",
+  "contentSettings",
+  "debugger",
+  "cookies",
+  "nativeMessaging",
+  "notifications",
+  "pageCapture",
+  "privacy",
+  "proxy",
+  "sessions",
+  "tabCapture",
+  "webNavigation",
+  "webRequest"
+],
+
+    //additional
+    "options_page": "html/options.html",
+    "homepage_url": "http://www.facebook.com/"
+}
